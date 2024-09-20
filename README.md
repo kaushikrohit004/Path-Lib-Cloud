@@ -1,15 +1,6 @@
-![](https://raw.githubusercontent.com/drivendataorg/cloudpathlib/master/docs/docs/logo.svg)
-
 <h1></h1>
 
-[![Docs Status](https://img.shields.io/badge/docs-stable-informational)](https://cloudpathlib.drivendata.org/)
-[![PyPI](https://img.shields.io/pypi/v/cloudpathlib.svg)](https://pypi.org/project/cloudpathlib/)
-[![conda-forge](https://img.shields.io/conda/vn/conda-forge/cloudpathlib.svg)](https://anaconda.org/conda-forge/cloudpathlib)
-[![conda-forge feedstock](https://img.shields.io/badge/conda--forge-feedstock-yellowgreen)](https://github.com/conda-forge/cloudpathlib-feedstock)
-[![tests](https://github.com/drivendataorg/cloudpathlib/workflows/tests/badge.svg?branch=master)](https://github.com/drivendataorg/cloudpathlib/actions?query=workflow%3Atests+branch%3Amaster)
-[![codecov](https://codecov.io/gh/drivendataorg/cloudpathlib/branch/master/graph/badge.svg)](https://codecov.io/gh/drivendataorg/cloudpathlib)
-
-> Our goal is to be the meringue of file management libraries: the subtle sweetness of `pathlib` working in harmony with the ethereal lightness of the cloud.
+> My goal is to be the meringue of file management libraries: the subtle sweetness of `pathlib` working in harmony with the ethereal lightness of the cloud.
 
 A Python library with classes that mimic `pathlib.Path`'s interface for URIs from different cloud storage services.
 
@@ -57,27 +48,12 @@ If you do not specify any extras or separately install any cloud SDKs, you will 
 conda install cloudpathlib-s3 -c conda-forge
 ```
 
-If no suffix is used, only the base classes will be usable. See the [conda-forge/cloudpathlib-feedstock](https://github.com/conda-forge/cloudpathlib-feedstock) for all installation options.
-
-### Development version
-
-You can get latest development version from GitHub:
-
-```bash
-pip install https://github.com/drivendataorg/cloudpathlib.git#egg=cloudpathlib[all]
-```
-
 Note that you similarly need to specify cloud service dependencies, such as `all` in the above example command.
-
-## Quick usage
-
-Here's an example to get the gist of using the package. By default, `cloudpathlib` authenticates with the environment variables supported by each respective cloud service SDK. For more details and advanced authentication options, see the ["Authentication"](https://cloudpathlib.drivendata.org/stable/authentication/) documentation.
 
 ```python
 from cloudpathlib import CloudPath
 
 # dispatches to S3Path based on prefix
-root_dir = CloudPath("s3://drivendata-public-assets/")
 root_dir
 #> S3Path('s3://drivendata-public-assets/')
 
@@ -93,11 +69,6 @@ for f in root_dir.glob('**/*.txt'):
 #> Full methodology evictionlab.org/methods/
 #>
 #> ... (additional text output truncated)
-
-# use / to join paths (and, in this case, create a new file)
-new_file_copy = root_dir / "nested_dir/copy_file.txt"
-new_file_copy
-#> S3Path('s3://drivendata-public-assets/nested_dir/copy_file.txt')
 
 # show things work and the file does not exist yet
 new_file_copy.exists()
