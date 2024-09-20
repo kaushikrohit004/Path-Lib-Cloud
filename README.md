@@ -174,7 +174,3 @@ Most methods and properties from `pathlib.Path` are supported except for the one
 | `key`                  | ❌                | ✅         | ❌         |
 | `md5`                  | ✅                | ❌         | ❌         |
 
-----
-
-<sup>Icon made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>.</sup>
-<br /><sup>Sample code block generated using the [reprexpy package](https://github.com/crew102/reprexpy).</sup>
