@@ -1,7 +1,3 @@
-<h1></h1>
-
-> My goal is to be the meringue of file management libraries: the subtle sweetness of `pathlib` working in harmony with the ethereal lightness of the cloud.
-
 A Python library with classes that mimic `pathlib.Path`'s interface for URIs from different cloud storage services.
 
 ```python
